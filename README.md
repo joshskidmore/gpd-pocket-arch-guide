@@ -157,7 +157,7 @@ By default, Arch disables dhcpcd. Enabling will allow your USB ethernet adapter 
 ### Networking
 
     # write broadcom brcm4356 config file
-    sudo curl _____ -o /lib/firmware/brcm/brcmfmac4356-pcie.txt
+    sudo curl https://raw.githubusercontent.com/joshskidmore/gpd-pocket-arch-guide/master/files/lib/firmware/brcm/brcmfmac4356-pcie.txt -o /lib/firmware/brcm/brcmfmac4356-pcie.txt
 
     # remove, re-modprobe brcmfmac module (now with config!)
     sudo rmmod brcmfmac; sudo modprobe brcmfmac
@@ -182,9 +182,9 @@ By default, Arch disables dhcpcd. Enabling will allow your USB ethernet adapter 
     yaourt -S xorg-server xorg-xev xorg-xinit xorg-xkill xorg-xmodmap xorg-xprop xorg-xrandr xorg-xrdb xorg-xset
 
     # use pocket-specific xorg configs
-    sudo curl _____ -o /etc/X11/xorg.conf.d/20-intel.conf
-    sudo curl _____ -o /etc/X11/xorg.conf.d/30-monitor.conf
-    sudo curl _____ -o /etc/X11/xorg.conf.d/99-touchscreen.conf
+    sudo curl https://raw.githubusercontent.com/joshskidmore/gpd-pocket-arch-guide/master/files/etc/X11/xorg.conf.d/20-intel.conf -o /etc/X11/xorg.conf.d/20-intel.conf
+    sudo curl https://raw.githubusercontent.com/joshskidmore/gpd-pocket-arch-guide/master/files/etc/X11/xorg.conf.d/30-monitor.conf -o /etc/X11/xorg.conf.d/30-monitor.conf
+    sudo curl https://raw.githubusercontent.com/joshskidmore/gpd-pocket-arch-guide/master/files/etc/X11/xorg.conf.d/99-touchscreen.conf -o /etc/X11/xorg.conf.d/99-touchscreen.conf
 
     # install intel video drivers
     yaourt -S xf86-video-intel
