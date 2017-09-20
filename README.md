@@ -201,7 +201,17 @@ By default, Arch disables dhcpcd. Enabling will allow your USB ethernet adapter 
 
 
 ### Audio
-(TODO)
+
+    # install pulseaudio packages
+    yaourt -S pulseaudio pulseaudio-alsa pulseaudio-bluetooth pulseaudio-ctl
+
+    # apply pocket-specific updates
+    curl https://raw.githubusercontent.com/joshskidmore/gpd-pocket-arch-guide/master/files/etc/pulse/_default.pa | sudo tee -a /etc/pulse/default.pa
+    sudo curl https://raw.githubusercontent.com/joshskidmore/gpd-pocket-arch-guide/master/files/usr/share/alsa/ucm/chtrt5645/HiFi.conf -o /usr/share/alsa/ucm/chtrt5645/HiFi.conf
+    sudo curl https://raw.githubusercontent.com/joshskidmore/gpd-pocket-arch-guide/master/files/usr/share/alsa/ucm/chtrt5645/chtrt5645.conf -o /usr/share/alsa/ucm/chtrt5645/chtrt5645.conf
+
+    # (optional) install nicer traybar utils to work with audio
+    yaourt -S pasystray-gtk3-standalone pavucontrol
 
 
 ### Xorg + XFCE4
@@ -228,5 +238,6 @@ By default, Arch disables dhcpcd. Enabling will allow your USB ethernet adapter 
 
 ## Sources Used in this Document
   * [arch linux's GPD Pocket device wiki](https://wiki.archlinux.org/index.php/GPD_Pocket)
-  * [cawilliamson's excellent gpdpocket github repo](https://github.com/cawilliamson/ansible-gpdpocket)
+  * [njkli's github repo](https://github.com/njkli/gpd-pocket)
+  * [cawilliamson's github repo](https://github.com/cawilliamson/ansible-gpdpocket)
   * [gilbertw1's original arch linux setup guide](https://gist.github.com/gilbertw1/81ef4b0bcf3ddefa4b18)
