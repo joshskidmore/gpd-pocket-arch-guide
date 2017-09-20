@@ -217,7 +217,7 @@ By default, Arch disables dhcpcd. Enabling will allow your USB ethernet adapter 
 ### Xorg + XFCE4
 
     # install xorg + utils
-    yaourt -S xorg-server xorg-xev xorg-xinit xorg-xkill xorg-xmodmap xorg-xprop xorg-xrandr xorg-xrdb xorg-xset
+    yaourt -S xorg-server xorg-xev xorg-xinit xorg-xkill xorg-xmodmap xorg-xprop xorg-xrandr xorg-xrdb xorg-xset xinit-xsession
 
     # use pocket-specific xorg configs
     sudo curl https://raw.githubusercontent.com/joshskidmore/gpd-pocket-arch-guide/master/files/etc/X11/xorg.conf.d/20-intel.conf -o /etc/X11/xorg.conf.d/20-intel.conf
@@ -234,6 +234,30 @@ By default, Arch disables dhcpcd. Enabling will allow your USB ethernet adapter 
     # enable xfce4 start in ~/.xinitrc
     echo "exec startxfce4" >> ~/.xinitrc
 
+
+### LightDM Display Manager (Optional)
+
+    # install lightdm and webkit2-greeter
+    yaourt -S lightdm lightdm-webkit2-greeter lightdm-webkit2-theme-material2
+
+    # edit lightdm.conf
+    vim /etc/lightdm/lightdm.conf
+
+      # replace greeter-session line with:
+      greeter-session=lightdm-webkit2-greeter
+
+    # edit lightdm-webkit2-greeter to use material2 config
+    vim /etc/lightdm/lightdm-webkit2-greeter.conf
+
+      # replace "webkit_theme" line with:
+      webkit_theme        = material2
+
+    # enable service
+    sudo systemctl enable lightdm.service
+
+    # restart the machine
+
+    # the fonts will initially be small; use "SETTINGS" button to adjust scale (and other options)
 
 
 ## Sources Used in this Document
