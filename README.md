@@ -1,3 +1,6 @@
+## Overview
+This is a basic guide to help someone get up and running with a dual-boot Windows 10 and Arch Linux / XFCE4 environment on the GPD Pocket. Please note that the files used in any `curl` command in this guide were added to this repo for simplicity's sake and were found elsewhere (see "Sources" at the bottom of this document).
+
 ## Partition Layout
 
     DEVICE              FS        REC SIZE      NOTES/MNT POINT
@@ -7,6 +10,15 @@
     /dev/mmcblk0p4      ext4      1G            /boot
     /dev/mmcblk0p5      swap      4G            /swap
     /dev/mmcblk0p6      ext4                    /
+
+
+# Preinstall
+
+## Resize Windows NTFS Partition
+Before starting, boot into Windows and resize the primary NTFS partition into something which leaves your Pocket enough space for Arch. My setup is roughly 25% for Windows, 70% for Arch and 5% for EFI, boot and swap.
+
+## Flash BIOS to Unlocked "Ubuntu" Version
+(TODO)
 
 
 ## Installation
@@ -174,6 +186,10 @@ By default, Arch disables dhcpcd. Enabling will allow your USB ethernet adapter 
       # Activate a Connection -> (choose wi-fi connection) -> Activate -> Back -> Quit
 
     # should be able to disconnect usb hub and/or usb ethernet because wireless is working!
+
+
+### Audio
+(TODO)
 
 
 ### Xorg + XFCE4
