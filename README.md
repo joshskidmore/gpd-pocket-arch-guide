@@ -239,5 +239,6 @@ By default, Arch disables dhcpcd. Enabling will allow your USB ethernet adapter 
 ## Sources Used in this Document
   * [arch linux's GPD Pocket device wiki](https://wiki.archlinux.org/index.php/GPD_Pocket)
   * [njkli's github repo](https://github.com/njkli/gpd-pocket)
+  * [nexus511's github repo](https://github.com/nexus511/gpd-ubuntu-packages)
   * [cawilliamson's github repo](https://github.com/cawilliamson/ansible-gpdpocket)
   * [gilbertw1's original arch linux setup guide](https://gist.github.com/gilbertw1/81ef4b0bcf3ddefa4b18)
