@@ -221,7 +221,10 @@ By default, Arch disables dhcpcd. Enabling will allow your USB ethernet adapter 
     modprobe btusb
 
     # install bluetooth packages
-    yaourt -S bluez bluez-utils bluez-tools blueman
+    yaourt -S bluez bluez-utils bluez-tools
+
+    # (optional) install nicer traybar util
+    yaourt -S blueman
 
 
 ### Xorg + XFCE4
