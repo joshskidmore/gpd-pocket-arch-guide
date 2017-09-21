@@ -214,6 +214,16 @@ By default, Arch disables dhcpcd. Enabling will allow your USB ethernet adapter 
     yaourt -S pasystray-gtk3-standalone pavucontrol
 
 
+### Bluetooth
+
+    # enable the btusb module
+    echo "btusb" | sudo tee /etc/modules-load.d/btusb.conf
+    modprobe btusb
+
+    # install bluetooth packages
+    yaourt -S bluez bluez-utils bluez-tools blueman
+
+
 ### Xorg + XFCE4
 
     # install xorg + utils
@@ -233,6 +243,9 @@ By default, Arch disables dhcpcd. Enabling will allow your USB ethernet adapter 
 
     # enable xfce4 start in ~/.xinitrc
     echo "exec startxfce4" >> ~/.xinitrc
+
+    # start
+    startx
 
 
 ### LightDM Display Manager (Optional)
