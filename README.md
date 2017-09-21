@@ -153,16 +153,23 @@ By default, Arch disables dhcpcd. Enabling will allow your USB ethernet adapter 
     # reboot and enjoy a readable terminal
 
 
-### Fan
+### Fan + Thermal
 
     # install gpd-fan package
     yaourt -S gpd-fan
       # note: the package install enables this package
 
-    # customize configuration (if desired)
+    # customize gpd-fan configuration (if desired)
     sudo cp /etc/default/gpd-fan.example /etc/default/gpd-fan
     vim /etc/default/gpd-fan
     sudo systemctl restart gpd-fan.service
+
+    # install thermald
+    yaourt -S thermald
+
+    # enable and start thermald
+    sudo systemctl enable thermald.service
+    sudo systemctl start thermald.service
 
 
 ### Time
