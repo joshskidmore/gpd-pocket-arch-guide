@@ -59,17 +59,10 @@ Use dd (or similar) to write the latest [Arch ISO](https://www.archlinux.org/dow
     echo MYHOSTNAME > /etc/hostname
 
 
-    # add repo with hans de goede's kernel (and other pocket-specific utils)
-    vim /etc/pacman.conf
-
-      # append the following to the end:
-      [gpd-pocket]
-      SigLevel = Optional TrustAll
-      Server = https://github.com/njkli/$repo/raw/master/repo
-
-    # pacman sync; install hans de goede's kernel
-    pacman -Sy
-    pacman -S linux-jwrdegoede linux-jwrdegoede-docs linux-jwrdegoede-headers
+    # add linux 4.14 linux packages
+    sudo pacman -U https://raw.githubusercontent.com/joshskidmore/gpd-pocket-arch-guide/master/files/njkli-repo/linux-jwrdegoede-docs-4.14.0rc1-1-x86_64.pkg.tar.xz
+    sudo pacman -U https://raw.githubusercontent.com/joshskidmore/gpd-pocket-arch-guide/master/files/njkli-repo/linux-jwrdegoede-headers-4.14.0rc1-1-x86_64.pkg.tar.xz
+    sudo pacman -U https://raw.githubusercontent.com/joshskidmore/gpd-pocket-arch-guide/master/files/njkli-repo/linux-jwrdegoede-4.14.0rc1-1-x86_64.pkg.tar.xz
 
     # remove standard kernel package
     pacman -R linux
@@ -156,7 +149,7 @@ By default, Arch disables dhcpcd. Enabling will allow your USB ethernet adapter 
 ### Fan + Thermal
 
     # install gpd-fan package
-    yaourt -S gpd-fan
+    sudo pacman -U https://raw.githubusercontent.com/joshskidmore/gpd-pocket-arch-guide/master/files/njkli-repo/gpd-fan-1.0.0-1-x86_64.pkg.tar.xz
       # note: the package install enables this package
 
     # customize gpd-fan configuration (if desired)
