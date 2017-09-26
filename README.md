@@ -60,9 +60,23 @@ Use dd (or similar) to write the latest [Arch ISO](https://www.archlinux.org/dow
 
 
     # add linux 4.14 linux packages
-    sudo pacman -U https://raw.githubusercontent.com/joshskidmore/gpd-pocket-arch-guide/master/files/njkli-repo/linux-jwrdegoede-docs-4.14.0rc1-1-x86_64.pkg.tar.xz
-    sudo pacman -U https://raw.githubusercontent.com/joshskidmore/gpd-pocket-arch-guide/master/files/njkli-repo/linux-jwrdegoede-headers-4.14.0rc1-1-x86_64.pkg.tar.xz
-    sudo pacman -U https://raw.githubusercontent.com/joshskidmore/gpd-pocket-arch-guide/master/files/njkli-repo/linux-jwrdegoede-4.14.0rc1-1-x86_64.pkg.tar.xz
+    Note: This process creates a /tmp directory and installs pacman packages directly from that directory. This bypasses the need for adding additional repos, signatures, pgp keys, etc.
+
+    mkdir /tmp/linux
+
+    cd /tmp/linux; \
+      curl -O https://raw.githubusercontent.com/joshskidmore/gpd-pocket-arch-guide/master/files/njkli-repo/linux-jwrdegoede-docs-4.14.0rc1-1-x86_64.pkg.tar.xz; \
+      sudo pacman -U linux-jwrdegoede-docs-4.14.0rc1-1-x86_64.pkg.tar.xz
+
+    cd /tmp/linux; \
+      curl -O https://raw.githubusercontent.com/joshskidmore/gpd-pocket-arch-guide/master/files/njkli-repo/linux-jwrdegoede-headers-4.14.0rc1-1-x86_64.pkg.tar.xz; \
+      sudo pacman -U linux-jwrdegoede-headers-4.14.0rc1-1-x86_64.pkg.tar.xz
+
+    cd /tmp/linux; \
+      curl -O https://raw.githubusercontent.com/joshskidmore/gpd-pocket-arch-guide/master/files/njkli-repo/linux-jwrdegoede-4.14.0rc1-1-x86_64.pkg.tar.xz; \
+      sudo pacman -U linux-jwrdegoede-4.14.0rc1-1-x86_64.pkg.tar.xz
+
+    rm -rf /tmp/linux
 
     # remove standard kernel package
     pacman -R linux
@@ -149,8 +163,11 @@ By default, Arch disables dhcpcd. Enabling will allow your USB ethernet adapter 
 ### Fan + Thermal
 
     # install gpd-fan package
-    sudo pacman -U https://raw.githubusercontent.com/joshskidmore/gpd-pocket-arch-guide/master/files/njkli-repo/gpd-fan-1.0.0-1-x86_64.pkg.tar.xz
-      # note: the package install enables this package
+    # note: the package install enables this package
+    cd /tmp; \
+      curl -O https://raw.githubusercontent.com/joshskidmore/gpd-pocket-arch-guide/master/files/njkli-repo/gpd-fan-1.0.0-1-x86_64.pkg.tar.xz; \
+      sudo pacman -U gpd-fan-1.0.0-1-x86_64.pkg.tar.xz; \
+      rm /tmp/gpd-fan-1.0.0-1-x86_64.pkg.tar.xz
 
     # customize gpd-fan configuration (if desired)
     sudo cp /etc/default/gpd-fan.example /etc/default/gpd-fan
