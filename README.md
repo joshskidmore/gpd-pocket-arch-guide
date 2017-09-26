@@ -60,7 +60,7 @@ Use dd (or similar) to write the latest [Arch ISO](https://www.archlinux.org/dow
 
 
     # add linux 4.14 linux packages
-    Note: This process creates a /tmp directory and installs pacman packages directly from that directory. This bypasses the need for adding additional repos, signatures, pgp keys, etc.
+    # Note: This process creates a /tmp directory and installs pacman packages directly from that directory. This bypasses the need for adding additional repos, signatures, pgp keys, etc.
 
     mkdir /tmp/linux
 
