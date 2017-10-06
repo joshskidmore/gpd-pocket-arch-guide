@@ -65,16 +65,16 @@ Use dd (or similar) to write the latest [Arch ISO](https://www.archlinux.org/dow
     mkdir /tmp/linux
 
     cd /tmp/linux; \
-      curl -O https://raw.githubusercontent.com/joshskidmore/gpd-pocket-arch-guide/master/files/njkli-repo/linux-jwrdegoede-docs-4.14.0rc2-1-x86_64.pkg.tar.xz; \
-      sudo pacman -U linux-jwrdegoede-docs-4.14.0rc2-1-x86_64.pkg.tar.xz
+      curl -O https://raw.githubusercontent.com/joshskidmore/gpd-pocket-arch-guide/master/files/njkli-repo/linux-jwrdegoede-docs-4.14.0rc3-1-x86_64.pkg.tar.xz; \
+      sudo pacman -U linux-jwrdegoede-docs-4.14.0rc3-1-x86_64.pkg.tar.xz
 
     cd /tmp/linux; \
-      curl -O https://raw.githubusercontent.com/joshskidmore/gpd-pocket-arch-guide/master/files/njkli-repo/linux-jwrdegoede-headers-4.14.0rc2-1-x86_64.pkg.tar.xz; \
-      sudo pacman -U linux-jwrdegoede-headers-4.14.0rc2-1-x86_64.pkg.tar.xz
+      curl -O https://raw.githubusercontent.com/joshskidmore/gpd-pocket-arch-guide/master/files/njkli-repo/linux-jwrdegoede-headers-4.14.0rc3-1-x86_64.pkg.tar.xz; \
+      sudo pacman -U linux-jwrdegoede-headers-4.14.0rc3-1-x86_64.pkg.tar.xz
 
     cd /tmp/linux; \
-      curl -O https://raw.githubusercontent.com/joshskidmore/gpd-pocket-arch-guide/master/files/njkli-repo/linux-jwrdegoede-4.14.0rc2-1-x86_64.pkg.tar.xz; \
-      sudo pacman -U linux-jwrdegoede-4.14.0rc2-1-x86_64.pkg.tar.xz
+      curl -O https://raw.githubusercontent.com/joshskidmore/gpd-pocket-arch-guide/master/files/njkli-repo/linux-jwrdegoede-4.14.0rc3-1-x86_64.pkg.tar.xz; \
+      sudo pacman -U linux-jwrdegoede-4.14.0rc3-1-x86_64.pkg.tar.xz
 
     rm -rf /tmp/linux
 
