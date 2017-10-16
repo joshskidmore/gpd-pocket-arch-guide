@@ -1,3 +1,6 @@
+**[Kernel packages located here](files/njkli-repo)**
+
+
 ## Overview
 This is a basic guide to help someone get up and running with a dual-boot Windows 10 and Arch Linux / XFCE4 environment on the GPD Pocket. Please note that the files used in any `curl` command in this guide were added to this repo for simplicity's sake and were found elsewhere (see "Sources" at the bottom of this document).
 
